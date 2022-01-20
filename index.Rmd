@@ -1,0 +1,117 @@
+---
+title: "Acessibilidade Urbana"
+author: 
+  - <br></br>Renata Oliveira
+date: '20/01/2022'
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", "slides.css"]
+    nature:
+      ratio: "16:9"
+      highlightLines: true
+      highlightStyle: solarized-light
+      countIncrementalSlides: false
+      slideNumberFormat: |
+         <div class="progress-bar-container">
+           <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+           </div>
+         </div>
+
+---
+
+```{r child = "setup.Rmd"}
+```
+
+```{r packages, echo=FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(openintro)
+loans_full_schema <- loans_full_schema %>%
+  mutate(grade = factor(grade, ordered = TRUE))
+```
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+```
+
+```{r xaringanExtra-clipboard, echo=FALSE}
+htmltools::tagList(
+  xaringanExtra::use_clipboard(
+    button_text = "<i class=\"fa fa-clipboard\"></i>",
+    success_text = "<i class=\"fa fa-check\" style=\"color: #90BE6D\"></i>",
+    error_text = "<i class=\"fa fa-times-circle\" style=\"color: #F94144\"></i>"
+  ),
+  rmarkdown::html_dependency_font_awesome()
+)
+```
+
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+```
+
+```{r xaringan-scribble, echo=FALSE}
+xaringanExtra::use_scribble()
+```
+
+
+# Mobilidade urbana x Acessibilidade urbana
+
+"O conceito de **acesso a oportunidades** está relacionado ao **potencial** de facilidade de locomoção, planejamento urbano, conectividade e eficiência dos meios de transporte, bem como ao planejamento e distribuição espacial dessas oportunidades no território. A **acessibilidade é essencial para que as pessoas satisfaçam suas necessidades básicas**, alcancem oportunidades de emprego e garantam uma renda".
+---
+
+# Acessibilidade urbana
+"é **facilidade de se acessar oportunidades de emprego, serviços de saúde e educação, atividades culturais, áreas verdes, etc**. O nível de acessibilidade de uma cidade ou bairro depende da **eficiência e conectividade da rede de transporte**, mas também da **proximidade entre pessoas e atividades**. A promoção de cidades mais **sustentáveis, inclusivas e inteligentes** exige políticas que melhorem a acessibilidade urbana e reduzam as desigualdades de acesso a oportunidades."
+
+---
+# Acessibilidade urbana
+A definição de acessibilidade traz também, dentro de si, uma noção de **liberdade**, pois quanto mais acessibilidade a pessoa tem, maior a sua liberdade de **escolha**. E é esse poder de escolha que dá aos indivíduos a possibilidade de desenvolverem suas capacidades e optarem pelas opções que mais fazem sentido para elas.
+
+---
+# Acessibilidade e iniquidades
+Infelizmente, é comum notar na maioria das capitais uma grande **desigualdade de oportunidades entre bairros mais ricos e mais pobres**. Em São Paulo, um estudo identificou que a **população rica** consegue acessar **nove vezes** mais oportunidades de **emprego** em comparação a **população mais pobre**.
+
+---
+
+# Acessibilidade em Brasilía
+Curiosamente, uma cidade que vai de oposto a essa tendência, é Brasília. Na capital federal, um estudo constatou que em alguns **bairros ricos**, como Park Way, Lago Sul e Lago Norte, **o acesso a alguns serviços é mais limitado do que em bairros mais pobres**. "Como eles têm um planejamento recente, o governo não previu a criação de grandes ofertas de serviços públicos, como escolas públicas e postos de saúde".
+
+---
+
+# Velocidade x proximidade
+
+Historicamente, uma das principais **medidas** tomadas em relação à política de **transportes** para solucionar **problemas de segregação e desigualdade** era tentar **aumentar a velocidade dos veículos**.
+
+A solução não está na velocidade, mas, sim, na **proximidade**. Ou seja, mais importante do que fazer as pessoas se locomoverem mais rápido, é fazer elas se locomoverem por **distâncias menores**, levando os serviços e oportunidades para perto delas. Assim, as pessoas conseguem fazer seu deslocamento diário utilizando formas de locomoção mais baratas e ecológicas, como **bicicletas ou até mesmo a pé**.
+
+---
+
+class: inverse
+
+# Análise da acessibilidade passiva de camelôs e ambulantes
+
+<br></br>
+### Mensurar as diferenças dos níveis de acessibilidade cumulativa considerando a mesma estrutura socioespacial e diferentes contextos locacionais para esses profissionais. 
+
+---
+# Análise da acessibilidade passiva de camelôs e ambulantes
+
+- Qual unidade espacial?
+- Quais indicadores?
+- Por que acessibilidade passiva?
+- Quais modos de transportes?
+- Quais recortes temporais explorar?
+- O que caracteriza o potencial consumidor? Concentração de atividades? Moradia? Sistemas de transporte?
+
+---
+# Referência para explorar a acessibilidade pelo projeto do IPEA
+
+https://www.ipea.gov.br/acessooportunidades/mapa/
+
+---
+
+# Referência para acesso aos dados do projeto acesso a oportunidades no R
+https://ipeagit.github.io/aopdata/
